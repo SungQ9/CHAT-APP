@@ -9,7 +9,7 @@ import Input from "../Input/Input";
 
 import "./Chat.css";
 
-const ENDPOINT = "http://localhost:5000";
+const ENDPOINT = "http://175.114.130.12:5000";
 
 const Chat = ({ location }) => {
   const [name, setName] = useState("");

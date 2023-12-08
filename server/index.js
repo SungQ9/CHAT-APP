@@ -19,7 +19,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketio(server, {
   cors: {
-    origin: "http://localhost:3000", // 허용할 도메인
+    origin: "*", // 허용할 도메인
     methods: ["GET", "POST"],
   },
 });
@@ -33,7 +33,7 @@ io.on("connect", (socket) => {
     if (error) callback({ error: "에러가 발생했습니다." });
 
     socket.emit("message", {
-      user: "admin",
+      user: "관리자",
       text: `${user.name}님 ${user.room}에 오신 것을 환영합니다.`,
     });
 
