@@ -9,7 +9,7 @@ import Input from "../Input/Input";
 
 import "./Chat.css";
 
-const ENDPOINT = "http://175.114.130.12:5000";
+const ENDPOINT = "http://175.114.130.12:5000"; // 서버를 돌리는 곳의 IP주소
 
 const Chat = ({ location }) => {
   const [name, setName] = useState("");
@@ -37,7 +37,6 @@ const Chat = ({ location }) => {
     });
 
     return () => {
-      // Cleanup function to close the socket when the component unmounts
       newSocket.disconnect();
     };
   }, [ENDPOINT, window.location.search]);
@@ -54,7 +53,6 @@ const Chat = ({ location }) => {
     });
 
     return () => {
-      // Cleanup function to remove event listeners when the component unmounts
       socket.off("message");
       socket.off("roomData");
     };

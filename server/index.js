@@ -6,12 +6,7 @@ const cors = require("cors");
 const router = require("./router");
 
 // index.js
-const {
-  addUser,
-  removeUser,
-  getUser,
-  getUsersInRoom,
-} = require("C:/workspace/nodejs/CHAT-APP/server/users");
+const { addUser, removeUser, getUser, getUsersInRoom } = require("./users");
 
 const PORT = process.env.PORT || 5000;
 
@@ -62,7 +57,7 @@ io.on("connect", (socket) => {
     const user = removeUser(socket.id);
     if (user) {
       io.to(user.room).emit("message", {
-        user: "admin",
+        user: "관리자",
         text: `${user.name}님이 퇴장하셨습니다.`,
       });
       io.to(user.room).emit("roomData", {
@@ -75,5 +70,6 @@ io.on("connect", (socket) => {
 });
 
 server.listen(PORT, "0.0.0.0", () =>
+  // 접근 권한 해제
   console.log(`서버가 ${PORT} 에서 시작되었습니다`)
 );
