@@ -9,14 +9,14 @@ const TextContainer = ({ users }) => (
     <div>
       <h1>
         {" "}
-        ICT 3반 채팅방{" "}
+        채팅방{" "}
         <span role="img" aria-label="emoji">
           💬
         </span>
       </h1>
       <h2>
         {" "}
-        웃고 떠들기 <span role="img" aria-label="emoji"></span>
+        매너있는 채팅해주세요 <span role="img" aria-label="emoji"></span>
       </h2>
       <h2>
         {" "}
